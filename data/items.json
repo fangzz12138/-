@@ -1,0 +1,466 @@
+[
+  {
+    "id": "tent",
+    "name": "双人帐篷",
+    "icon": "⛺",
+    "type": "shelter",
+    "price": 800,
+    "weight": 2.5,
+    "effects": {
+      "night_temperature_loss": -0.5,
+      "sanity_recovery_night": 5,
+      "can_camp": true
+    },
+    "description": "生存必备，夜晚露营的基础。"
+  },
+  {
+    "id": "sleeping_bag",
+    "name": "羽绒睡袋",
+    "icon": "🛌",
+    "type": "shelter",
+    "price": 1200,
+    "weight": 1.2,
+    "effects": {
+      "night_temperature_loss": -2.0
+    },
+    "description": "羽绒+抓绒，温标-15度，防止失温的关键。"
+  },
+  {
+    "id": "moisture_pad",
+    "name": "防潮垫",
+    "icon": "🧘",
+    "type": "shelter",
+    "price": 100,
+    "weight": 0.4,
+    "effects": {
+      "night_temperature_loss": -0.5,
+      "sanity_recovery_night": 2
+    },
+    "description": "隔绝地面湿气和寒气。"
+  },
+  {
+    "id": "aluminum_mat",
+    "name": "铝箔地席",
+    "icon": "⬜",
+    "type": "shelter",
+    "price": 50,
+    "weight": 0.2,
+    "effects": {
+      "night_temperature_loss": -0.2
+    },
+    "description": "铺在帐篷底部，增加保暖。"
+  },
+  {
+    "id": "stove",
+    "name": "炉头",
+    "icon": "🔥",
+    "type": "gear",
+    "price": 150,
+    "weight": 0.1,
+    "effects": {
+      "can_cook": true
+    },
+    "description": "野外烹饪的核心工具。"
+  },
+  {
+    "id": "pot",
+    "name": "套锅",
+    "icon": "🍲",
+    "type": "gear",
+    "price": 120,
+    "weight": 0.5,
+    "effects": {
+      "can_cook": true
+    },
+    "description": "轻便的户外锅具。"
+  },
+  {
+    "id": "gas",
+    "name": "气罐",
+    "icon": "⛽",
+    "type": "consumable",
+    "price": 30,
+    "weight": 0.4,
+    "effects": {
+      "fuel": 10
+    },
+    "description": "燃料，每个可以使用约10次。"
+  },
+  {
+    "id": "crampons",
+    "name": "冰爪",
+    "icon": "🐾",
+    "type": "gear",
+    "price": 200,
+    "weight": 0.5,
+    "effects": {
+      "move_cost_snow": -0.5
+    },
+    "description": "雪地行走的必备装备，防滑。"
+  },
+  {
+    "id": "thermos",
+    "name": "保温水壶",
+    "icon": "🧴",
+    "type": "gear",
+    "price": 150,
+    "weight": 0.6,
+    "effects": {
+      "thirst_recovery_bonus": 5
+    },
+    "description": "随时喝上一口热水是莫大的幸福。"
+  },
+  {
+    "id": "lighter",
+    "name": "打火机",
+    "icon": "🔥",
+    "type": "gear",
+    "price": 5,
+    "weight": 0.05,
+    "effects": {
+      "can_start_fire": true
+    },
+    "description": "取火工具。"
+  },
+  {
+    "id": "hardshell_jacket",
+    "name": "冲锋衣",
+    "icon": "🧥",
+    "type": "clothing",
+    "price": 1500,
+    "weight": 0.8,
+    "effects": {
+      "temp_protection": 2,
+      "rain_protection": 0.8
+    },
+    "description": "防风防水，应对恶劣天气。"
+  },
+  {
+    "id": "fleece_jacket",
+    "name": "抓绒衣",
+    "icon": "👕",
+    "type": "clothing",
+    "price": 400,
+    "weight": 0.5,
+    "effects": {
+      "temp_protection": 3
+    },
+    "description": "保暖层，轻便透气。"
+  },
+  {
+    "id": "down_jacket",
+    "name": "羽绒服",
+    "icon": "🧥",
+    "type": "clothing",
+    "price": 1000,
+    "weight": 0.4,
+    "effects": {
+      "temp_protection": 5
+    },
+    "description": "营地保暖神器，不可行进中穿着（太热）。"
+  },
+  {
+    "id": "hiking_boots",
+    "name": "登山鞋",
+    "icon": "🥾",
+    "type": "clothing",
+    "price": 1200,
+    "weight": 1.2,
+    "effects": {
+      "stamina_cost_reduction": 0.1
+    },
+    "description": "高帮防水，保护脚踝。"
+  },
+  {
+    "id": "trekking_pole",
+    "name": "登山杖(对)",
+    "icon": "🦯",
+    "type": "gear",
+    "price": 300,
+    "weight": 0.5,
+    "effects": {
+      "stamina_cost_reduction": 0.2
+    },
+    "description": "节省体力，保护膝盖。"
+  },
+  {
+    "id": "raincoat",
+    "name": "雨衣",
+    "icon": "☔",
+    "type": "clothing",
+    "price": 50,
+    "weight": 0.3,
+    "effects": {
+      "rain_protection": 1.0
+    },
+    "description": "完全防水，但透气性差。"
+  },
+  {
+    "id": "headlamp",
+    "name": "头灯",
+    "icon": "🔦",
+    "type": "gear",
+    "price": 200,
+    "weight": 0.1,
+    "effects": {
+      "can_move_night": true
+    },
+    "description": "夜间行动必备。"
+  },
+  {
+    "id": "batteries",
+    "name": "7号电池",
+    "icon": "🔋",
+    "type": "consumable",
+    "price": 20,
+    "weight": 0.1,
+    "effects": {
+      "power": 10
+    },
+    "description": "头灯的能源。"
+  },
+  {
+    "id": "food_instant_noodles",
+    "name": "方便面",
+    "icon": "🍜",
+    "type": "food",
+    "price": 5,
+    "weight": 0.1,
+    "effects": {
+      "hunger": 30,
+      "thirst": -10,
+      "sanity": 2
+    },
+    "description": "简单快捷的热食，但高盐会口渴。"
+  },
+  {
+    "id": "food_dried_noodles",
+    "name": "挂面",
+    "icon": "🍝",
+    "type": "food",
+    "price": 10,
+    "weight": 0.5,
+    "effects": {
+      "hunger": 80,
+      "thirst": -5,
+      "needs_cooking": true
+    },
+    "description": "耐煮，量大管饱。需要煮熟食用。"
+  },
+  {
+    "id": "food_naan",
+    "name": "馕",
+    "icon": "🫓",
+    "type": "food",
+    "price": 5,
+    "weight": 0.2,
+    "effects": {
+      "hunger": 30
+    },
+    "description": "耐储存，顶饿。"
+  },
+  {
+    "id": "food_beef_jerky",
+    "name": "牛肉",
+    "icon": "🥩",
+    "type": "food",
+    "price": 80,
+    "weight": 0.5,
+    "effects": {
+      "hunger": 50,
+      "stamina": 10,
+      "spoil_chance": 0.1
+    },
+    "description": "高蛋白，补充体力。注意保质期。"
+  },
+  {
+    "id": "food_vegetables",
+    "name": "脱水蔬菜",
+    "icon": "🥦",
+    "type": "food",
+    "price": 30,
+    "weight": 0.1,
+    "effects": {
+      "health": 2,
+      "hunger": 10,
+      "spoil_chance": 0.05
+    },
+    "description": "补充维生素。"
+  },
+  {
+    "id": "candy",
+    "name": "水果糖",
+    "icon": "🍬",
+    "type": "food",
+    "price": 20,
+    "weight": 0.2,
+    "effects": {
+      "sanity": 5,
+      "stamina": 2
+    },
+    "description": "心情不好时来一颗。"
+  },
+  {
+    "id": "liquor",
+    "name": "白酒",
+    "icon": "🍶",
+    "type": "food",
+    "price": 50,
+    "weight": 0.5,
+    "effects": {
+      "temp": 2,
+      "sanity": 10,
+      "health": -2,
+      "thirst": -20
+    },
+    "description": "暖身，但会脱水。"
+  },
+  {
+    "id": "gps",
+    "name": "GPS导航",
+    "icon": "🧭",
+    "type": "gear",
+    "price": 2000,
+    "weight": 0.3,
+    "effects": {
+      "lost_chance_reduction": 0.8
+    },
+    "description": "防止迷路，尤其在雾天。"
+  },
+  {
+    "id": "first_aid_kit",
+    "name": "急救包",
+    "icon": "🩹",
+    "type": "consumable",
+    "price": 100,
+    "weight": 0.3,
+    "effects": {
+      "health": 20
+    },
+    "description": "处理外伤。"
+  },
+  {
+    "id": "medicine",
+    "name": "药品组合",
+    "icon": "💊",
+    "type": "consumable",
+    "price": 80,
+    "weight": 0.1,
+    "effects": {
+      "health": 10,
+      "status_cure": "sick"
+    },
+    "description": "感冒药、止痛药等。"
+  },
+  {
+    "id": "food_high_energy",
+    "name": "压缩饼干",
+    "icon": "🍪",
+    "type": "food",
+    "price": 25,
+    "weight": 0.2,
+    "effects": {
+      "hunger": 60,
+      "stamina": 5,
+      "thirst": -15
+    },
+    "description": "干涩难咽，但热量极高。"
+  },
+  {
+    "id": "water_bottle",
+    "name": "矿泉水",
+    "icon": "💧",
+    "type": "water",
+    "price": 10,
+    "weight": 0.5,
+    "effects": {
+      "thirst": 30
+    },
+    "description": "普通的500ml饮用水。"
+  },
+  {
+    "id": "energy_drink",
+    "name": "功能饮料",
+    "icon": "⚡",
+    "type": "water",
+    "price": 25,
+    "weight": 0.5,
+    "effects": {
+      "thirst": 20,
+      "stamina": 15
+    },
+    "description": "补充电解质和体力。"
+  },
+  {
+    "id": "duct_tape",
+    "name": "大力胶带",
+    "icon": "🩹",
+    "type": "gear",
+    "price": 20,
+    "weight": 0.1,
+    "effects": {
+      "repair_bonus": 1
+    },
+    "description": "万能修补工具，哪里坏了贴哪里。"
+  },
+  {
+    "id": "book",
+    "name": "《瓦尔登湖》",
+    "icon": "📖",
+    "type": "luxury",
+    "price": 50,
+    "weight": 0.4,
+    "effects": {
+      "sanity_recovery": 15
+    },
+    "description": "在荒野中阅读，净化心灵。"
+  },
+  {
+    "id": "camera",
+    "name": "微单相机",
+    "icon": "📷",
+    "type": "luxury",
+    "price": 3000,
+    "weight": 1.2,
+    "effects": {
+      "sanity_recovery": 5
+    },
+    "description": "记录沿途美景，虽然很重。"
+  },
+  {
+    "id": "backpack_small",
+    "name": "轻量背包",
+    "icon": "🎒",
+    "type": "gear",
+    "price": 500,
+    "weight": 1.0,
+    "effects": {
+      "capacity_bonus": 20
+    },
+    "description": "基础背包，增加20kg负重上限。"
+  },
+  {
+    "id": "backpack_medium",
+    "name": "重装背包",
+    "icon": "🎒",
+    "type": "gear",
+    "price": 900,
+    "weight": 2.0,
+    "effects": {
+      "capacity_bonus": 35
+    },
+    "description": "专业登山包，增加35kg负重上限。"
+  },
+  {
+    "id": "backpack_large",
+    "name": "远征背包",
+    "icon": "🎒",
+    "type": "gear",
+    "price": 1500,
+    "weight": 2.5,
+    "effects": {
+      "capacity_bonus": 50
+    },
+    "description": "顶级背负系统，增加50kg负重上限。"
+  }
+]

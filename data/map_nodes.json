@@ -1,0 +1,146 @@
+[
+  {
+    "node_id": "start",
+    "name": "起点(塘口)",
+    "description": "徒步的开始，一切看起来都很美好。",
+    "type": "start",
+    "altitude": 1700,
+    "terrain": "forest",
+    "connections": ["huoshaopo"],
+    "resources": {"water": true, "shelter": false},
+    "distance_to_next": 10
+  },
+  {
+    "node_id": "huoshaopo",
+    "name": "火烧坡",
+    "description": "陡峭的爬升，对体力的第一次考验。",
+    "type": "normal",
+    "altitude": 2400,
+    "terrain": "forest",
+    "connections": ["camp_2900"],
+    "resources": {"water": false, "shelter": false},
+    "distance_to_next": 8
+  },
+  {
+    "node_id": "camp_2900",
+    "name": "2900营地",
+    "description": "第一个较为平坦的营地。",
+    "type": "campsite",
+    "altitude": 2900,
+    "terrain": "meadow",
+    "connections": ["penjingyuan"],
+    "resources": {"water": true, "shelter": false},
+    "distance_to_next": 6
+  },
+  {
+    "node_id": "penjingyuan",
+    "name": "盆景园",
+    "description": "古树形态各异，风景优美。",
+    "type": "normal",
+    "altitude": 3100,
+    "terrain": "meadow",
+    "connections": ["baiqimiao"],
+    "resources": {"water": false, "shelter": false},
+    "distance_to_next": 8
+  },
+  {
+    "node_id": "baiqimiao",
+    "name": "白起庙",
+    "description": "传说中的庙宇遗址。",
+    "type": "normal",
+    "altitude": 3200,
+    "terrain": "meadow",
+    "connections": ["shiwoweng"],
+    "resources": {"water": false, "shelter": false},
+    "distance_to_next": 6
+  },
+  {
+    "node_id": "shiwoweng",
+    "name": "石窝翁",
+    "description": "乱石堆积，行走困难。",
+    "type": "normal",
+    "altitude": 3300,
+    "terrain": "rocky",
+    "connections": ["camp_2800"],
+    "resources": {"water": false, "shelter": false},
+    "distance_to_next": 10
+  },
+  {
+    "node_id": "camp_2800",
+    "name": "2800营地",
+    "description": "关键的下撤点，也是重要的休整地。",
+    "type": "campsite",
+    "altitude": 2800,
+    "terrain": "forest",
+    "connections": ["jinzita"],
+    "resources": {"water": true, "shelter": false},
+    "distance_to_next": 8,
+    "can_evacuate": true
+  },
+  {
+    "node_id": "jinzita",
+    "name": "金字塔垭口",
+    "description": "山形如金字塔，乱石嶙峋。",
+    "type": "normal",
+    "altitude": 3300,
+    "terrain": "rocky",
+    "connections": ["xiyuan"],
+    "resources": {"water": false, "shelter": false},
+    "distance_to_next": 6
+  },
+  {
+    "node_id": "xiyuan",
+    "name": "西塬",
+    "description": "开阔的高山草甸。",
+    "type": "normal",
+    "altitude": 3400,
+    "terrain": "meadow",
+    "connections": ["dongyuan"],
+    "resources": {"water": false, "shelter": false},
+    "distance_to_next": 6
+  },
+  {
+    "node_id": "dongyuan",
+    "name": "东塬",
+    "description": "连绵的草甸，视野开阔。",
+    "type": "normal",
+    "altitude": 3450,
+    "terrain": "meadow",
+    "connections": ["wanxianzhen"],
+    "resources": {"water": false, "shelter": false},
+    "distance_to_next": 8
+  },
+  {
+    "node_id": "wanxianzhen",
+    "name": "万仙阵",
+    "description": "巨石阵列，仿佛天然迷宫。",
+    "type": "danger",
+    "altitude": 3500,
+    "terrain": "rocky",
+    "connections": ["paomaliang"],
+    "resources": {"water": false, "shelter": false},
+    "distance_to_next": 10
+  },
+  {
+    "node_id": "paomaliang",
+    "name": "跑马梁",
+    "description": "著名的风口，大风常年呼啸。",
+    "type": "danger",
+    "altitude": 3600,
+    "terrain": "ridge",
+    "connections": ["dayehai"],
+    "resources": {"water": false, "shelter": false},
+    "distance_to_next": 6
+  },
+  {
+    "node_id": "dayehai",
+    "name": "大爷海(终点)",
+    "description": "高山湖泊，圣湖。抵达这里即为成功。",
+    "type": "end",
+    "altitude": 3600,
+    "terrain": "rocky",
+    "connections": [],
+    "resources": {"water": true, "shelter": true},
+    "distance_to_next": 0
+  }
+]

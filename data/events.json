@@ -1,0 +1,529 @@
+[
+  {
+    "event_id": "hiker_injured",
+    "name": "受伤的驴友",
+    "description": "你发现一位脚踝受伤的徒步者坐在路边痛苦呻吟。",
+    "trigger_conditions": {"terrain": "rocky", "chance": 0.1},
+    "choices": [
+      {
+        "text": "帮助他包扎 (消耗急救包, 体力-5)",
+        "requirements": {"items": ["first_aid_kit"]},
+        "effects": {
+          "stamina": -5,
+          "karma": 1,
+          "remove_item": "first_aid_kit",
+          "message": "你帮他处理了伤口，他感激涕零，记下了你的名字。"
+        }
+      },
+      {
+        "text": "留下食物 (消耗高能路餐)",
+        "requirements": {"items": ["food_high_energy"]},
+        "effects": {
+          "karma": 0.5,
+          "remove_item": "food_high_energy",
+          "message": "你留下了一些食物，希望他能挺过去。"
+        }
+      },
+      {
+        "text": "无视离开 (SAN-10)",
+        "requirements": {},
+        "effects": {
+          "sanity": -10,
+          "message": "你选择冷漠离开，良心受到了一丝谴责。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "sudden_fog",
+    "name": "突起大雾",
+    "description": "四周突然升起浓雾，能见度不足5米。",
+    "trigger_conditions": {"weather": "fog", "chance": 0.3},
+    "choices": [
+      {
+        "text": "使用GPS导航 (消耗电池)",
+        "requirements": {"items": ["gps"]},
+        "effects": {
+          "message": "依靠GPS，你成功保持了方向。"
+        }
+      },
+      {
+        "text": "原地等待 (消耗时间)",
+        "requirements": {},
+        "effects": {
+          "action_points": -2,
+          "message": "你等待雾气散去，浪费了一些时间。"
+        }
+      },
+      {
+        "text": "强行前进 (可能迷路)",
+        "requirements": {},
+        "effects": {
+          "random_outcome": [
+            {"chance": 0.5, "effects": {"stamina": -10, "message": "你走了一些冤枉路，消耗了额外体力。"}},
+            {"chance": 0.5, "effects": {"message": "运气不错，你凭直觉走对了方向。"}}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "beautiful_scenery",
+    "name": "壮丽景色",
+    "description": "云开雾散，壮丽的秦岭山脉展现在眼前。",
+    "trigger_conditions": {"weather": "sunny", "chance": 0.2},
+    "choices": [
+      {
+        "text": "欣赏美景 (SAN+10)",
+        "requirements": {},
+        "effects": {
+          "sanity": 10,
+          "message": "大自然的壮美让你忘却了疲惫。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "lost_gear",
+    "name": "装备遗失",
+    "description": "你发现背包侧袋开了，似乎掉了什么东西。",
+    "trigger_conditions": {"terrain": "forest", "chance": 0.05},
+    "choices": [
+      {
+        "text": "回头寻找 (消耗时间)",
+        "requirements": {},
+        "effects": {
+          "action_points": -2,
+          "message": "你花了两小时找回了掉落的水壶。"
+        }
+      },
+      {
+        "text": "算了，继续赶路",
+        "requirements": {},
+        "effects": {
+          "sanity": -5,
+          "message": "你懊恼地继续前进。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "wild_animal",
+    "name": "野生动物",
+    "description": "行进中，远处的灌木丛中传来了奇怪的声响，似乎是羚牛。",
+    "trigger_conditions": {"terrain": "forest", "phase": "hike", "chance": 0.1},
+    "choices": [
+      {
+        "text": "悄悄绕行 (消耗体力)",
+        "requirements": {},
+        "effects": {
+          "stamina": -10,
+          "message": "你小心翼翼地绕过了那片区域。"
+        }
+      },
+      {
+        "text": "大声驱赶",
+        "requirements": {},
+        "effects": {
+          "random_outcome": [
+            {"chance": 0.7, "effects": {"message": "动物被吓跑了。"}},
+            {"chance": 0.3, "effects": {"health": -20, "message": "羚牛被激怒了，冲撞了你！"}}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "find_supplies",
+    "name": "搜寻物资",
+    "description": "你发现了一处似乎有人停留过的痕迹。",
+    "trigger_conditions": {"chance": 0.1},
+    "choices": [
+      {
+        "text": "仔细搜寻 (消耗1h)",
+        "requirements": {},
+        "effects": {
+          "special_action": "scavenge",
+          "message": "你决定花点时间碰碰运气。"
+        }
+      },
+      {
+        "text": "赶路要紧",
+        "requirements": {},
+        "effects": {
+          "message": "你没有停留，继续前行。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "slippery_slope",
+    "name": "湿滑陡坡",
+    "description": "雨后的山坡异常湿滑。",
+    "trigger_conditions": {"weather": "rain", "chance": 0.4},
+    "choices": [
+      {
+        "text": "使用登山杖支撑",
+        "requirements": {"items": ["trekking_pole"]},
+        "effects": {
+          "stamina": -2,
+          "message": "有了登山杖的帮助，你稳步通过了。"
+        }
+      },
+      {
+        "text": "手脚并用",
+        "requirements": {},
+        "effects": {
+          "stamina": -10,
+          "message": "你弄得满身泥泞，非常狼狈。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "starry_night",
+    "name": "璀璨星空",
+    "description": "今夜天气晴朗，银河清晰可见。",
+    "trigger_conditions": {"weather": "sunny", "time": "night", "chance": 0.5},
+    "choices": [
+      {
+        "text": "仰望星空",
+        "requirements": {},
+        "effects": {
+          "sanity": 20,
+          "message": "在这无人的旷野，星空给了你巨大的慰藉。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "altitude_sickness",
+    "name": "高原反应",
+    "description": "随着海拔升高，你感到头痛欲裂，呼吸困难。",
+    "trigger_conditions": {"altitude_min": 3000, "chance": 0.2},
+    "choices": [
+      {
+        "text": "服用药物",
+        "requirements": {"items": ["medicine"]},
+        "effects": {
+          "remove_item": "medicine",
+          "health": 5,
+          "sanity": 5,
+          "message": "药物缓解了你的症状，感觉好多了。"
+        }
+      },
+      {
+        "text": "原地休息 (消耗时间)",
+        "requirements": {},
+        "effects": {
+          "action_points": -3,
+          "stamina": 5,
+          "health": -5,
+          "message": "休息并未完全缓解症状，反而浪费了宝贵时间，身体依然不适。"
+        }
+      },
+      {
+        "text": "硬撑 (极度危险)",
+        "requirements": {},
+        "effects": {
+          "health": -30,
+          "sanity": -20,
+          "message": "你的状态急剧恶化，意识开始模糊，这是在玩命！"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "broken_shoe",
+    "name": "鞋底脱胶",
+    "description": "你的登山鞋突然开胶了。",
+    "trigger_conditions": {"chance": 0.01},
+    "choices": [
+      {
+        "text": "用胶带修补",
+        "requirements": {"items": ["tape"]},
+        "effects": {
+          "remove_item": "tape",
+          "message": "暂时修好了，希望能撑到终点。"
+        }
+      },
+      {
+        "text": "用绳子绑住",
+        "requirements": {},
+        "effects": {
+          "stamina_cost_multiplier": 1.2,
+          "message": "走起来很不舒服，体力消耗增加了。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "altitude_sickness",
+    "name": "高原反应",
+    "description": "随着海拔升高，你感到头痛欲裂，呼吸困难。",
+    "trigger_conditions": {"altitude_min": 3000, "chance": 0.15},
+    "choices": [
+      {
+        "text": "原地休息 (消耗时间)",
+        "requirements": {},
+        "effects": {
+          "action_points": -2,
+          "health": 5,
+          "message": "休息后症状稍有缓解。"
+        }
+      },
+      {
+        "text": "强行赶路 (健康-15)",
+        "requirements": {},
+        "effects": {
+          "health": -15,
+          "sanity": -5,
+          "message": "你强忍着痛苦继续前行，身体状况恶化了。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "wild_boar",
+    "name": "野猪出没",
+    "description": "前方的灌木丛中传来哼哼声，一头野猪冲了出来！",
+    "trigger_conditions": {"terrain": "forest", "chance": 0.05},
+    "choices": [
+      {
+        "text": "爬树躲避 (体力-10)",
+        "requirements": {},
+        "effects": {
+          "stamina": -10,
+          "message": "你手脚并用爬上大树，躲过一劫。"
+        }
+      },
+      {
+        "text": "大声吼叫 (SAN-5)",
+        "requirements": {},
+        "effects": {
+          "random_outcome": [
+            {"chance": 0.7, "effects": {"message": "野猪被你的气势吓跑了。"}},
+            {"chance": 0.3, "effects": {"health": -20, "message": "野猪被激怒了，撞伤了你的腿！"}}
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "water_source_dry",
+    "name": "水源干涸",
+    "description": "地图上标注的水源点竟然干涸了。",
+    "trigger_conditions": {"chance": 0.1},
+    "choices": [
+      {
+        "text": "继续寻找 (消耗体力)",
+        "requirements": {},
+        "effects": {
+          "stamina": -15,
+          "thirst": -10,
+          "message": "你多走了两公里才找到一处细流。"
+        }
+      },
+      {
+        "text": "忍耐 (口渴+20)",
+        "requirements": {},
+        "effects": {
+          "thirst": 20,
+          "sanity": -5,
+          "message": "你决定忍耐到下一个营地，喉咙像火烧一样。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "shoe_broken",
+    "name": "鞋底脱胶",
+    "description": "你的登山鞋底突然开裂了。",
+    "trigger_conditions": {"chance": 0.01},
+    "choices": [
+      {
+        "text": "使用胶带修复",
+        "requirements": {"items": ["duct_tape"]},
+        "effects": {
+          "remove_item": "duct_tape",
+          "message": "大力胶带拯救了你的鞋子。"
+        }
+      },
+      {
+        "text": "用绳子绑住",
+        "requirements": {},
+        "effects": {
+          "stamina_cost_multiplier": 1.1,
+          "message": "勉强能走，但容易打滑。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "sudden_rain",
+    "name": "骤雨",
+    "description": "天空突然乌云密布，下起了冰冷的雨。",
+    "trigger_conditions": {"weather": ["sunny", "cloudy"], "chance": 0.2},
+    "choices": [
+      {
+        "text": "穿上雨衣",
+        "requirements": {"items": ["raincoat"]},
+        "effects": {
+          "temp": -1,
+          "change_weather": "rain",
+          "message": "雨衣挡住了大部分雨水，但天气变得糟糕了。"
+        }
+      },
+      {
+        "text": "冒雨前进 (体温-5)",
+        "requirements": {},
+        "effects": {
+          "temp": -5,
+          "health": -5,
+          "change_weather": "rain",
+          "message": "你全身湿透，冷得发抖，大雨倾盆而下。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "sunset",
+    "name": "绝美日落",
+    "description": "夕阳染红了云海，美得令人窒息。",
+    "trigger_conditions": {"time_range": [17, 19], "weather": "sunny", "chance": 0.3},
+    "choices": [
+      {
+        "text": "拍照留念 (SAN+15)",
+        "requirements": {},
+        "effects": {
+          "sanity": 15,
+          "message": "这一刻的感动让你觉得一切都值了。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "trash_cleanup",
+    "name": "路边垃圾",
+    "description": "路边散落着一些气罐和塑料袋。",
+    "trigger_conditions": {"chance": 0.1},
+    "choices": [
+      {
+        "text": "捡起来带走 (负重+0.5)",
+        "requirements": {},
+        "effects": {
+          "karma": 2,
+          "message": "你清理了垃圾，感觉自己做了一件好事。"
+        }
+      },
+      {
+        "text": "无视",
+        "requirements": {},
+        "effects": {
+          "karma": -1,
+          "message": "你叹了口气，匆匆走过。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "shortcut",
+    "name": "危险捷径",
+    "description": "你发现一条看起来能省一小时路程的小道，但很陡峭。",
+    "trigger_conditions": {"terrain": "rocky", "chance": 0.1},
+    "choices": [
+      {
+        "text": "走捷径",
+        "requirements": {},
+        "effects": {
+          "random_outcome": [
+            {"chance": 0.6, "effects": {"action_points": 1, "message": "你成功抄了近道，省下了时间和体力。"}},
+            {"chance": 0.4, "effects": {"health": -15, "message": "你不小心滑倒了，摔得不轻。"}}
+          ]
+        }
+      },
+      {
+        "text": "走大路",
+        "requirements": {},
+        "effects": {
+          "message": "安全第一，你选择了稳妥的路线。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "wild_berries",
+    "name": "野果",
+    "description": "路边长着一些红色的野果，看起来很诱人。",
+    "trigger_conditions": {"terrain": "forest", "chance": 0.1},
+    "choices": [
+      {
+        "text": "尝尝看",
+        "requirements": {},
+        "effects": {
+          "random_outcome": [
+            {"chance": 0.5, "effects": {"hunger": 10, "sanity": 5, "message": "酸甜可口，补充了能量。"}},
+            {"chance": 0.5, "effects": {"health": -10, "status": "sick", "message": "果子有毒！你感到腹痛难忍。"}}
+          ]
+        }
+      },
+      {
+        "text": "不吃",
+        "requirements": {},
+        "effects": {
+          "message": "你没有冒险。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "night_noise",
+    "name": "夜半异响",
+    "description": "帐篷外传来奇怪的脚步声。",
+    "trigger_conditions": {"phase": "camp", "time": "night", "chance": 0.1},
+    "choices": [
+      {
+        "text": "大声呵斥",
+        "requirements": {},
+        "effects": {
+          "sanity": -5,
+          "message": "声音消失了，但你一整晚都没睡好。"
+        }
+      },
+      {
+        "text": "静观其变",
+        "requirements": {},
+        "effects": {
+          "sanity": -10,
+          "message": "你在恐惧中度过了漫长的一夜。"
+        }
+      }
+    ]
+  },
+  {
+    "event_id": "night_hike_headlamp",
+    "name": "夜间行路",
+    "description": "四周漆黑一片，看不清脚下的路。",
+    "trigger_conditions": {"time": "night", "phase": "hike", "chance": 0.3},
+    "choices": [
+      {
+        "text": "打开头灯 (消耗电池)",
+        "requirements": {"items": ["headlamp", "batteries"]},
+        "effects": {
+          "remove_item": "batteries", 
+          "message": "头灯的光束照亮了前路，你安全地前进。"
+        }
+      },
+      {
+        "text": "摸黑前进 (极度危险)",
+        "requirements": {},
+        "effects": {
+          "random_outcome": [
+            {"chance": 0.4, "effects": {"message": "你小心翼翼地摸索着前进，速度很慢。"}},
+            {"chance": 0.6, "effects": {"health": -15, "stamina": -10, "message": "你一脚踩空摔倒了，受了伤！"}}
+          ]
+        }
+      }
+    ]
+  }
+]
