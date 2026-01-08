@@ -222,7 +222,7 @@ class Game:
                 self.ui.add_button(text, lambda i=item_id: self.select_shop_item(i), screen_x, screen_y, 160, 35, color=color, icon=item.get('icon'))
                 
                 # Price
-                self.ui.add_button(f"¥{item['price']}", None, screen_x + 165, screen_y, 60, 35, color=DARK_GRAY)
+                self.ui.add_button(str(item['price']), None, screen_x + 165, screen_y, 60, 35, color=DARK_GRAY)
                 
                 # Weight
                 self.ui.add_button(f"{item['weight']}kg", None, screen_x + 230, screen_y, 60, 35, color=DARK_GRAY)
@@ -679,7 +679,7 @@ class Game:
 
     def retreat(self):
         self.state.game_won = True # Technically survived
-        self.state.status_message = f"你选择了下撤，保住了性命。剩余资金 ¥{self.state.money} 已保存。"
+        self.state.status_message = f"你选择了下撤，保住了性命。剩余资金 {self.state.money} 已保存。"
         self.game_phase = "GAME_OVER"
         self.setup_game_over_ui()
 

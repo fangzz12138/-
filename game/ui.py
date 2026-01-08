@@ -570,7 +570,7 @@ class UI:
         color_money = YELLOW if remaining >= 0 else RED
         color_weight = RED if current_weight > max_w else TEXT_COLOR
         
-        self.draw_text(f"预算: ¥{game_state.money} - 购物车: ¥{cart_total} = 剩余: ¥{remaining}", SCREEN_WIDTH//2, 85, self.large_font, color=color_money, center=True)
+        self.draw_text(f"资金: {game_state.money} - 购物车: {cart_total} = 剩余: {remaining}", SCREEN_WIDTH//2, 85, self.large_font, color=color_money, center=True)
         
         # Weight Display
         self.draw_text(f"负重: {current_weight:.1f}/{max_w:.1f}kg", SCREEN_WIDTH - 220, 85, self.large_font, color=color_weight)
@@ -586,7 +586,7 @@ class UI:
             # Icon & Name
             icon_w = self.draw_emoji(item.get('icon', '📦'), 40, details_y + 20, 64)
             self.draw_text(f"{item['name']}", 40 + icon_w + 15, details_y + 30, self.title_font)
-            self.draw_text(f"类型: {item['type']}  |  重量: {item['weight']}kg  |  单价: ¥{item['price']}", 40 + icon_w + 15, details_y + 80, self.font, color=GRAY)
+            self.draw_text(f"类型: {item['type']}  |  重量: {item['weight']}kg  |  价格: {item['price']}", 40 + icon_w + 15, details_y + 80, self.font, color=GRAY)
             
             # Description & Effects
             # Split width: Description left, Effects right
@@ -602,7 +602,7 @@ class UI:
             dy = details_y + 70
             for k, v in item['effects'].items():
                 key_text = EFFECT_TRANSLATIONS.get(k, k)
-                self.draw_text(f"• {key_text}: {v}", effects_x, dy, self.font)
+                self.draw_text(f"- {key_text}: {v}", effects_x, dy, self.font)
                 dy += 25
         else:
             self.draw_text("请选择下方物品查看详情", SCREEN_WIDTH//2, details_y + details_h//2, self.large_font, color=GRAY, center=True)
@@ -751,7 +751,7 @@ class UI:
             f"存活天数: {game_state.game_time} 天",
             f"最低体温: {getattr(game_state, 'lowest_temp', 36.5):.1f}°C",
             f"最低SAN值: {getattr(game_state, 'lowest_sanity', 100)}",
-            f"剩余资金: ¥{game_state.money}"
+            f"剩余资金: {game_state.money}"
         ]
         
         for stat in stats:
