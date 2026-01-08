@@ -292,21 +292,20 @@ class UI:
         self.draw_progress_bar(30, y, bar_w, bar_h, game_state.stamina, MAX_STAMINA, YELLOW, "体力", "⚡")
         self.draw_progress_bar(30 + gap, y, bar_w, bar_h, game_state.hunger, MAX_HUNGER, ORANGE, "饥饿", "🍗")
         self.draw_progress_bar(30 + gap*2, y, bar_w, bar_h, game_state.thirst, MAX_THIRST, BLUE, "口渴", "💧")
+        self.draw_progress_bar(30 + gap*3, y, bar_w, bar_h, game_state.sanity, MAX_SANITY, PURPLE, "SAN", "🧠")
+        self.draw_progress_bar(30 + gap*4, y, bar_w, bar_h, game_state.health, MAX_HEALTH, GREEN, "健康", "❤️")
         
-        # Temperature - Text only mode
+        # Temperature - Text only mode (Placed at the end)
         t_icon = "🌡️"
-        t_w = self.draw_emoji(t_icon, 30 + gap*3, y - 5, 20)
-        self.draw_text("体温", 30 + gap*3 + t_w + 5, y, self.small_font, color=RED)
+        t_w = self.draw_emoji(t_icon, 30 + gap*5, y - 5, 20)
+        self.draw_text("体温", 30 + gap*5 + t_w + 5, y, self.small_font, color=RED)
         
         # Color code temperature
         temp_color = GREEN
         if game_state.temperature < 35.0: temp_color = RED
         elif game_state.temperature < 36.5: temp_color = ORANGE
         
-        self.draw_text(f"{game_state.temperature:.1f}°C", 30 + gap*3 + 70, y, self.small_font, color=temp_color)
-
-        self.draw_progress_bar(30 + gap*4, y, bar_w, bar_h, game_state.sanity, MAX_SANITY, PURPLE, "SAN", "🧠")
-        self.draw_progress_bar(30 + gap*5, y, bar_w, bar_h, game_state.health, MAX_HEALTH, GREEN, "健康", "❤️")
+        self.draw_text(f"{game_state.temperature:.1f}°C", 30 + gap*5 + 70, y, self.small_font, color=temp_color)
 
         # Row 2: Info
         y = 75
