@@ -10,7 +10,7 @@
         "requirements": {"items": ["first_aid_kit"]},
         "effects": {
           "stamina": -5,
-          "karma": 1,
+          "karma": 10,
           "remove_item": "first_aid_kit",
           "message": "你帮他处理了伤口，他感激涕零，记下了你的名字。"
         }
@@ -19,7 +19,7 @@
         "text": "留下食物 (消耗高能路餐)",
         "requirements": {"items": ["food_high_energy"]},
         "effects": {
-          "karma": 0.5,
+          "karma": 5,
           "remove_item": "food_high_energy",
           "message": "你留下了一些食物，希望他能挺过去。"
         }
@@ -412,7 +412,7 @@
         "text": "捡起来带走 (负重+0.5)",
         "requirements": {},
         "effects": {
-          "karma": 2,
+          "karma": 1,
           "message": "你清理了垃圾，感觉自己做了一件好事。"
         }
       },
@@ -420,7 +420,7 @@
         "text": "无视",
         "requirements": {},
         "effects": {
-          "karma": -1,
+          "karma": -2,
           "message": "你叹了口气，匆匆走过。"
         }
       }
