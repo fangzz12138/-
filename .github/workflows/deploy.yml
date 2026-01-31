@@ -20,8 +20,11 @@ jobs:
         run: |
           # Use --build to just generate the files in build/web
           python -m pygbag --build .
-          # Copy CNAME to build folder for custom domain support
+          # Copy CNAME and coi-serviceworker to build folder
           cp CNAME build/web/ || true
+          cp coi-serviceworker.js build/web/ || true
+          # Patch index.html to include COI worker
+          sed -i 's/<title>/<script src="coi-serviceworker.js"><\/script><title>/g' build/web/index.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
