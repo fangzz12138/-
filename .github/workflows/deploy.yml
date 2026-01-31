@@ -20,6 +20,8 @@ jobs:
         run: |
           # Use --build to just generate the files in build/web
           python -m pygbag --build .
+          # Copy CNAME to build folder for custom domain support
+          cp CNAME build/web/ || true
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
