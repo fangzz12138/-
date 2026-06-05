@@ -1,0 +1,43 @@
+# ===== 原始数据（文件太大，且不应公开） =====
+000000_0.csv
+*.csv
+!risk_output/model_comparison.csv
+
+# ===== 生成的输出结果（可重新运行生成） =====
+risk_output/anomaly_detection_result.csv
+risk_output/pipeline.log
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ===== Jupyter =====
+.ipynb_checkpoints/
+*.ipynb
+
+# ===== 虚拟环境 =====
+venv/
+.venv/
+env/
+.env/
+
+# ===== IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== 模型输出缓存 =====
+*.joblib_cache/
